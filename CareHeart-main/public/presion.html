@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Presión | CareHeart</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/presion.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        
+        <aside class="barra-lateral">
+            <div class="logo-container">
+              <img src="assets/images/logo careheart.png" alt="Logo CareHeart" class="logo-dashboard">
+              <h1>CareHeart</h1>
+            </div>
+    
+            <nav class="menu-navegacion">
+              <a href="dashboard.html" class="enlace-menu activo">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+              </a>
+              <a href="recordatorio.html" class="enlace-menu">
+                <span class="material-symbols-outlined">notifications</span>
+                Recordatorios
+              </a>
+              <a href="historial.html" class="enlace-menu">
+                <span class="material-symbols-outlined">history</span>
+                Historial
+              </a>
+              <a href="alertas.html" class="enlace-menu">
+                <span class="material-symbols-outlined">warning</span>
+                Alertas
+              </a>
+              <a href="perfil.html" class="enlace-menu">
+                <span class="material-symbols-outlined">person</span>
+                Perfil
+              </a>
+              <a href="SOS.html" class="boton-sos">SOS</a>
+            </nav>
+    
+            <div class="menu-inferior">
+              <a href="configuracion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">settings</span>
+                Configuración
+              </a>
+              <a href="inicio-de-sesion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">logout</span>
+                Cerrar Sesión
+              </a>
+            </div>
+        </aside>
+
+        <div class="panel-derecho">
+            <header class="encabezado">
+                <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="titulo-seccion">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <a href="dashboard.html" style="text-decoration:none; color:#666;">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </a>
+                        <div>
+                            <h2>Dashboard</h2>
+                            <p>Resumen del estado de salud del paciente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="perfil-usuario">
+                    <button class="btn-notificacion"><span class="material-symbols-outlined">notifications</span></button>
+                    <div class="info-doctor">
+                        <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar">
+                        <div>
+                            <p class="nombre-doc">Dr. Martínez</p>
+                            <p class="rol-doc">Cardiólogo</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="contenido-scroll">
+                <div class="layout-detalle">
+                    
+                    <div class="columna-graficos">
+                        <div class="tarjeta tarjeta-dato-top">
+                            <div class="bloque-izq-top">
+                                <div class="icono-circular cyan">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </div>
+                                <div class="info-dato">
+                                    <h3>Detalle de Presión Arterial</h3>
+                                    <span class="fecha-dato">Última medición: 14:32 - Hoy</span>
+                                </div>
+                            </div>
+                            
+                            <div class="valores-dobles">
+                                <div class="valor-box">
+                                    <span class="label-purple">Sistólica</span>
+                                    <span class="numero-grande">120</span>
+                                    <span class="unidad">mmHg</span>
+                                </div>
+                                <div class="valor-box">
+                                    <span class="label-pink">Diastólica</span>
+                                    <span class="numero-grande">80</span>
+                                    <span class="unidad">mmHg</span>
+                                </div>
+                            </div>
+
+                            <div class="estado-pill cyan">Estado: Normal</div>
+                        </div>
+
+                        <div class="tarjeta tarjeta-grafico-main">
+                            <div class="header-grafico">
+                                <h3>Historial de Presión Arterial</h3>
+                                <div class="filtros">
+                                    <button>Hoy</button>
+                                    <button class="activo">7 días</button>
+                                    <button>Mes</button>
+                                    <button>Año</button>
+                                </div>
+                            </div>
+
+                            <div class="contenedor-ejes">
+                                <div class="eje-y">
+                                    <span>120</span>
+                                    <span>80</span>
+                                    <span>60</span>
+                                </div>
+                                <div class="area-grafico-svg">
+                                    <svg viewBox="0 0 100 50" preserveAspectRatio="none">
+                                        <path class="linea-borde-purple" d="M0,25 C10,22 20,15 30,16 C40,17 50,22 60,22 C70,15 80,16 90,20 L100,19" />
+                                        <path class="linea-borde-pink" d="M0,40 C10,40 20,38 30,35 C40,34 50,38 60,42 C70,40 80,38 90,39 L100,41" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="eje-x" style="padding-left: 30px;">
+                                <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columna-info-lateral">
+                        <div class="tarjeta tarjeta-lateral">
+                            <h3>Rango ideal del Paciente</h3>
+                            <p class="texto-lateral">Valores de Objetivos Personalizadas</p>
+                            
+                            <div class="tabla-rango">
+                                <div class="fila-rango purple-bg">
+                                    <span class="rango-nombre purple-text">Sistólica</span>
+                                    <span class="rango-valor">110-130 mmHg</span>
+                                </div>
+                                <div class="fila-rango pink-bg">
+                                    <span class="rango-nombre pink-text">Diastólica</span>
+                                    <span class="rango-valor">70-85 mmHg</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta tarjeta-lateral">
+                            <h3>Recomendaciones</h3>
+                            <ul class="lista-recomendaciones">
+                                <li>Reducir la ingesta de Sodio</li>
+                                <li>Realizar caminata ligera de 30 minutos</li>
+                                <li>Monitorear la presión por la tarde</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="assets/scripts/menu-responsive.js"></script>
+    <script src="assets/scripts/graficos.js"></script>
+<script src="assets/scripts/notificaciones.js"></script>
+
+</body>
+</html>

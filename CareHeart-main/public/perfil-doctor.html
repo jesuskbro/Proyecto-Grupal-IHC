@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Doctor - CareHeart</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/perfil-doctor.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        
+        <aside class="barra-lateral">
+            <div class="logo-container">
+              <img src="assets/images/logo careheart.png" alt="Logo CareHeart" class="logo-dashboard">
+              <h1>CareHeart</h1>
+            </div>
+    
+            <nav class="menu-navegacion">
+              <a href="dashboard.html" class="enlace-menu activo">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+              </a>
+              <a href="recordatorio.html" class="enlace-menu">
+                <span class="material-symbols-outlined">notifications</span>
+                Recordatorios
+              </a>
+              <a href="historial.html" class="enlace-menu">
+                <span class="material-symbols-outlined">history</span>
+                Historial
+              </a>
+              <a href="alertas.html" class="enlace-menu">
+                <span class="material-symbols-outlined">warning</span>
+                Alertas
+              </a>
+              <a href="perfil.html" class="enlace-menu">
+                <span class="material-symbols-outlined">person</span>
+                Perfil
+              </a>
+    
+              <a href="SOS.html" class="boton-sos">SOS</a>
+            </nav>
+    
+            <div class="menu-inferior">
+              <a href="configuracion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">settings</span>
+                Configuración
+              </a>
+              <a href="inicio-de-sesion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">logout</span>
+                Cerrar Sesión
+              </a>
+            </div>
+        </aside>
+
+        <div class="panel-derecho">
+            <header class="encabezado">
+                <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="titulo-seccion">
+                    <h2>Dashboard</h2>
+                    <p>Resumen del estado de salud del paciente.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <button class="btn-notificacion"><span class="material-symbols-outlined">notifications</span></button>
+                    <div class="info-doctor">
+                        <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar">
+                        <div>
+                            <p class="nombre-doc">Dr. Martínez</p>
+                            <p class="rol-doc">Cardiólogo</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="contenido-scroll">
+                <div class="layout-doctor">
+                    
+                    <div class="columna-izq">
+                        <div class="foto-container">
+                            <img src="assets/images/doctor.jpg" alt="Dr. Martínez" class="foto-perfil-grande">
+                        </div>
+
+                        <div class="tarjeta tarjeta-contacto">
+                            <h3 class="titulo-teal">Contacto</h3>
+                            <div class="info-contacto">
+                                <p><strong>Teléfono / WhatsApp:</strong> 906530157</p>
+                                <p><strong>Correo:</strong> martinesohno@gmail.com</p>
+                                <p><strong>Dirección:</strong> Clinica San Judas Tadeo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columna-der">
+                        <div class="cabecera-doctor">
+                            <h1>Dr. Martínez</h1>
+                            <p class="especialidad">Especialidad <br> <span class="texto-negro">Cardiología</span></p>
+                        </div>
+
+                        <div class="tarjeta tarjeta-detalle">
+                            <p class="texto-bio">
+                                El Dr. Martínez es un profesional de la salud formado en la institución Sideral Carrión, donde desarrolló una sólida base médica y un compromiso firme con la atención humana y responsable. Con experiencia clínica y una vocación centrada en el bienestar del paciente, destaca por su trato cercano, diagnósticos precisos y enfoque actualizado en cada consulta. <br><br>
+                                Su práctica combina conocimiento, empatía y dedicación, ofreciendo atención confiable a quienes buscan soluciones claras y efectivas para su salud.
+                            </p>
+                        </div>
+
+                        <div class="tarjeta tarjeta-detalle">
+                            <h3 class="titulo-teal">Servicios</h3>
+                            <ul class="lista-items">
+                                <li>Evaluación y diagnóstico de enfermedades cardiovasculares</li>
+                                <li>Control de hipertensión arterial</li>
+                                <li>Manejo y seguimiento de arritmias</li>
+                                <li>Prevención de infartos y enfermedades cardiacas</li>
+                                <li>Electrocardiograma (ECG)</li>
+                                <li>Orientación en hábitos saludables para el corazón</li>
+                                <li>Derivación a procedimientos especializados cuando corresponde</li>
+                            </ul>
+                        </div>
+
+                        <div class="tarjeta tarjeta-detalle">
+                            <h3 class="titulo-teal">Certificaciones y Formación Continua</h3>
+                            <ul class="lista-items">
+                                <li>Egresado de Sideral Carrión</li>
+                                <li>Especialización en Cardiología</li>
+                                <li>Cursos y congresos en prevención cardiovascular y actualización clínica</li>
+                                <li>Capacitación en diagnóstico y manejo de riesgo cardiaco</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="assets/scripts/menu-responsive.js"></script>
+<script src="assets/scripts/notificaciones.js"></script>
+
+</body>
+</html>

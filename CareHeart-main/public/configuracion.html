@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - CareHeart</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/configuracion.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        
+        <aside class="barra-lateral">
+            <div class="logo-container">
+              <img src="assets/images/logo careheart.png" alt="Logo CareHeart" class="logo-dashboard">
+              <h1>CareHeart</h1>
+            </div>
+    
+            <nav class="menu-navegacion">
+              <a href="dashboard.html" class="enlace-menu">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+              </a>
+              <a href="recordatorio.html" class="enlace-menu">
+                <span class="material-symbols-outlined">notifications</span>
+                Recordatorios
+              </a>
+              <a href="historial.html" class="enlace-menu">
+                <span class="material-symbols-outlined">history</span>
+                Historial
+              </a>
+              <a href="alertas.html" class="enlace-menu">
+                <span class="material-symbols-outlined">warning</span>
+                Alertas
+              </a>
+              <a href="perfil.html" class="enlace-menu">
+                <span class="material-symbols-outlined">person</span>
+                Perfil
+              </a>
+              <a href="SOS.html" class="boton-sos">SOS</a>
+            </nav>
+    
+            <div class="menu-inferior">
+              <a href="configuracion.html" class="enlace-menu activo">
+                <span class="material-symbols-outlined">settings</span>
+                Configuración
+              </a>
+              <a href="inicio-de-sesion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">logout</span>
+                Cerrar Sesión
+              </a>
+            </div>
+        </aside>
+
+        <div class="panel-derecho">
+            <header class="encabezado">
+                <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="titulo-seccion">
+                    <h2>Configuración</h2>
+                    <p>Gestiona tu cuenta, dispositivos y preferencias.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <button class="btn-notificacion"><span class="material-symbols-outlined">notifications</span></button>
+                    <div class="info-doctor" onclick="window.location.href='perfil-doctor.html'" style="cursor: pointer;">
+                        <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar">
+                        <div>
+                            <p class="nombre-doc">Dr. Martínez</p>
+                            <p class="rol-doc">Cardiólogo</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="contenido-scroll">
+                <div class="layout-config">
+                    
+                    <div class="columna-config">
+                        
+                        <div class="tarjeta tarjeta-config">
+                            <h3>Preferencias de Notificaciones</h3>
+                            <p class="subtexto">Elige qué alertas deseas recibir en tu celular.</p>
+                            
+                            <div class="lista-switches">
+                                <div class="item-switch">
+                                    <div class="info-switch">
+                                        <span class="titulo-switch">Alertas Críticas</span>
+                                        <span class="desc-switch">Caídas, ritmo cardíaco irregular.</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="check-alertas" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                                <div class="item-switch">
+                                    <div class="info-switch">
+                                        <span class="titulo-switch">Recordatorios de Medicación</span>
+                                        <span class="desc-switch">Avisos de pastillas y citas.</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="check-recordatorios" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                                <div class="item-switch">
+                                    <div class="info-switch">
+                                        <span class="titulo-switch">Resumen Semanal</span>
+                                        <span class="desc-switch">Recibir reporte por correo electrónico.</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="check-resumen">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <d  iv class="tarjeta tarjeta-config">
+                            <h3>Dispositivo Vinculado</h3>
+                            <div class="info-dispositivo" id="contenedor-dispositivo">
+                                <div class="cargando-placeholder">Cargando estado del dispositivo...</div>
+                            </div>
+                        </d>
+
+                    </div>
+
+                    <div class="columna-config">
+                        
+                        <div class="tarjeta tarjeta-config">
+                            <h3>Ajustes de Cuenta</h3>
+                            <form class="form-cuenta" id="form-config">
+                                <div class="campo">
+                                    <label>Correo Electrónico</label>
+                                    <input type="email" id="input-email" value="carmen@gmail.com">
+                                </div>
+                                <div class="campo">
+                                    <label>Nueva Contraseña</label>
+                                    <input type="password" placeholder="••••••••">
+                                </div>
+                                <div class="campo">
+                                    <label>Confirmar Contraseña</label>
+                                    <input type="password" placeholder="••••••••">
+                                </div>
+                                
+                                <div class="acciones-form">
+                                    <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tarjeta tarjeta-soporte">
+                            <h3>¿Necesitas ayuda?</h3>
+                            <p>Si tienes problemas con tu dispositivo o la aplicación, contáctanos.</p>
+                            <button class="btn-soporte" id="btn-abrir-soporte"> <span class="material-symbols-outlined">support_agent</span> Contactar Soporte
+</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+<div id="modal-soporte" class="modal-overlay hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Centro de Ayuda CareHeart</h3>
+            <button class="btn-cerrar-modal" id="btn-cerrar-modal">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <p class="modal-desc">Estamos aquí para ayudarte. Elige una opción:</p>
+        
+        <div class="grid-opciones-soporte">
+            <a href="tel:+51999999999" class="opcion-soporte">
+                <div class="icono-opcion verde">
+                    <span class="material-symbols-outlined">call</span>
+                </div>
+                <span>Llamar</span>
+            </a>
+
+            <a href="mailto:soporte@careheart.com" class="opcion-soporte">
+                <div class="icono-opcion azul">
+                    <span class="material-symbols-outlined">mail</span>
+                </div>
+                <span>Correo</span>
+            </a>
+
+            <div class="opcion-soporte" id="btn-iniciar-chat">
+                <div class="icono-opcion naranja">
+                    <span class="material-symbols-outlined">chat</span>
+                </div>
+                <span>Chat en Vivo</span>
+            </div>
+        </div>
+
+        <div id="area-chat-simulado" class="hidden">
+            <div class="chat-status">
+                <span class="loader-dots"></span> Conectando con un agente...
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="assets/scripts/configuracion.js"></script>
+    <script src="assets/scripts/menu-responsive.js"></script>
+
+</body>
+</html>

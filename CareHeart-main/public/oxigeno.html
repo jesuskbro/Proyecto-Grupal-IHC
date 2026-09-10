@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Oxígeno | CareHeart</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/oxigeno.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        
+        <aside class="barra-lateral">
+            <div class="logo-container">
+              <img src="assets/images/logo careheart.png" alt="Logo CareHeart" class="logo-dashboard">
+              <h1>CareHeart</h1>
+            </div>
+    
+            <nav class="menu-navegacion">
+              <a href="dashboard.html" class="enlace-menu activo">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+              </a>
+              <a href="recordatorio.html" class="enlace-menu">
+                <span class="material-symbols-outlined">notifications</span>
+                Recordatorios
+              </a>
+              <a href="historial.html" class="enlace-menu">
+                <span class="material-symbols-outlined">history</span>
+                Historial
+              </a>
+              <a href="alertas.html" class="enlace-menu">
+                <span class="material-symbols-outlined">warning</span>
+                Alertas
+              </a>
+              <a href="perfil.html" class="enlace-menu">
+                <span class="material-symbols-outlined">person</span>
+                Perfil
+              </a>
+    
+              <a href="SOS.html" class="boton-sos">SOS</a>
+            </nav>
+    
+            <div class="menu-inferior">
+              <a href="configuracion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">settings</span>
+                Configuración
+              </a>
+              <a href="inicio-de-sesion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">logout</span>
+                Cerrar Sesión
+              </a>
+            </div>
+        </aside>
+
+        <div class="panel-derecho">
+            <header class="encabezado">
+                <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="titulo-seccion">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <a href="dashboard.html" style="text-decoration:none; color:#666;">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </a>
+                        <div>
+                            <h2>Dashboard</h2>
+                            <p>Resumen del estado de salud del paciente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="perfil-usuario">
+                    <button class="btn-notificacion"><span class="material-symbols-outlined">notifications</span></button>
+                    <div class="info-doctor">
+                        <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar">
+                        <div>
+                            <p class="nombre-doc">Dr. Martínez</p>
+                            <p class="rol-doc">Cardiólogo</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="contenido-scroll">
+                <div class="layout-detalle">
+                    
+                    <div class="columna-graficos">
+                        <div class="tarjeta tarjeta-dato-top">
+                            <div class="icono-circular cyan">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </div>
+                            <div class="info-dato">
+                                <h3>Detalle de Oxígeno en Sangre</h3>
+                                <p class="valor-gigante">92%</p>
+                                <span class="fecha-dato">Última medición: 14:32 - Hoy</span>
+                            </div>
+                            <div class="estado-pill cyan">Estado: Normal</div>
+                        </div>
+
+                        <div class="tarjeta tarjeta-grafico-main">
+                            <div class="header-grafico">
+                                <div>
+                                    <h3>Historial de Oxígeno en Sangre</h3>
+                                    <p class="sub-grafico">Últimos 7 días</p>
+                                    <p class="valor-promedio">86.5%</p>
+                                </div>
+                                <div class="filtros">
+                                    <button>Hoy</button>
+                                    <button class="activo">7 días</button>
+                                    <button>Mes</button>
+                                    <button>Año</button>
+                                </div>
+                            </div>
+
+                            <div class="area-grafico-svg">
+                                <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                                    <path class="linea-relleno-cyan" d="M0,40 L0,30 C10,20 20,20 30,30 C40,40 50,25 60,35 C70,45 80,10 90,25 L100,20 L100,40 Z" />
+                                    <path class="linea-borde-cyan" d="M0,30 C10,20 20,20 30,30 C40,40 50,25 60,35 C70,45 80,10 90,25 L100,20" />
+                                    <circle cx="80" cy="10" r="1.5" class="punto-rojo" />
+                                </svg>
+                            </div>
+                            <div class="eje-x">
+                                <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columna-info-lateral">
+                        <div class="tarjeta tarjeta-lateral">
+                            <h3>Rango Saludable de SpO2</h3>
+                            <div class="rango-box">
+                                <span class="rango-valor">95% - 100%</span>
+                                <span class="badge-optimo">Optimo</span>
+                            </div>
+                            <p class="texto-lateral">Un nivel de SpO2 dentro de este rango es considerado normal para la mayoría de las personas sanas.</p>
+                        </div>
+
+                        <div class="tarjeta tarjeta-lateral">
+                            <h3>Historial de Alertas</h3>
+                            <div class="alerta-item">
+                                <div>
+                                    <p class="titulo-alerta">Nivel crítico detectado: 85.5%</p>
+                                    <p class="fecha-alerta">Hace 3 días, 22:15</p>
+                                </div>
+                                <span class="material-symbols-outlined icon-danger">error</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="assets/scripts/menu-responsive.js"></script>
+    <script src="assets/scripts/graficos.js"></script>
+<script src="assets/scripts/notificaciones.js"></script>
+
+</body>
+</html>

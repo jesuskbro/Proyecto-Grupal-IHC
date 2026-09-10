@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos - CareHeart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <link rel="stylesheet" href="assets/styles/pie.css">
+</head>
+<body>
+  
+  <nav class="Top-hearder">
+      <a href="../index.html" class="logo"><img src="assets/images/logo careheart.png" alt="Logo"></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      
+      <div class="nav-menu" id="nav-menu">
+         <ul class="Menu-horizontal">
+            <li><a href="../index.html" style="font-weight: 900;">← Inicio</a></li>
+            
+            <li><a href="caracteristicas.html">Características</a></li>
+            <li><a href="planes.html">Planes</a></li>
+            <li>
+               <a href="recursos.html">Recursos ▾</a>
+               <ul class="Menu-vertical">
+                 <li><a href="#faq">Preguntas frecuentes</a></li>
+                 <li><a href="#tutoriales">Tutoriales</a></li>
+                 <li><a href="#privacidad">Privacidad y datos</a></li>
+               </ul>
+            </li>
+         </ul>
+
+         <div class="botones-login">
+            <a href="inicio-de-sesion.html" class="btn-ingresar">Ingresar</a>
+            <a href="registrarse.html" class="btn-registrarse">Registrarse</a>
+         </div>
+      </div>
+  </nav>
+
+  <header class="header-interno">
+    <h1>Centro de Recursos</h1>
+    <p>Ayuda, tutoriales y todo lo que necesitas saber sobre CareHeart.</p>
+  </header>
+
+  <main class="contenedor-interno">
+    
+    <div id="faq" class="seccion-detalle">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-item">
+        <div class="faq-question">¿La pulsera es resistente al agua? ▾</div>
+        <div class="faq-answer">Sí, cuenta con certificación IP67, lo que permite ducharse con ella sin problemas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Cuánto dura la batería? ▾</div>
+        <div class="faq-answer">La batería dura aproximadamente 5 a 7 días con un uso normal de monitoreo.</div>
+      </div>
+    </div>
+
+    <div id="tutoriales" class="seccion-detalle">
+      <h2>Tutoriales</h2>
+      <p>Aprende a configurar tu dispositivo paso a paso.</p>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="https://www.youtube.com/embed/IM3PsUUTCNE?si=OG8ZzbzuMa-PafdF" style="color:#2e8b89; text-decoration:none;">▶ Video: Cómo vincular por primera vez</a></li>
+        <li style="margin-bottom: 10px;"><a href="https://www.youtube.com/embed/jXhGN9Q7u7Y?si=X8S4XKewfqnqQStl" style="color:#2e8b89; text-decoration:none;">▶ Guía: Configurar zonas seguras</a></li>
+      </ul>
+    </div>
+
+    <div id="privacidad" class="seccion-detalle">
+      <h2>Privacidad y Datos</h2>
+      <p>Tu seguridad es lo primero. Todos los datos de salud están encriptados.</p>
+      <a href="../Documentos/4852903-politica-de-privacidad-para-el-tratamiento-de-datos-personales-essalud.pdf" target="_blank" class="btn-verde">Ver Política de Privacidad (PDF)</a>
+    </div>
+
+  </main>
+
+  <section class="seccion-pie">
+    <footer class="footer-container">
+      <a href="../index.html" class="logo"><img height="80" width="80" src="assets/images/logo careheart.png" alt="Logo Footer" /></a>
+      <div class="footer-links"><h4>Legal</h4><a href="#">Política de Privacidad</a><a href="#">Términos</a></div>
+      <div class="footer-social"><h4>Síguenos</h4><a href="#">Facebook</a><a href="#">Instagram</a></div>
+    </footer>
+  </section>
+
+  <script>
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+  </script>
+</body>
+
+</html>
+
+

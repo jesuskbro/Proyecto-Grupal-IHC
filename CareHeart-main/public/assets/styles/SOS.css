@@ -1,0 +1,271 @@
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA LA PÁGINA SOS
+   ========================================= */
+
+/* Contenedor principal que centra todo */
+.contenido-sos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); /* Restamos la altura del header */
+    background-color: #f6f7f8;
+    position: relative;
+    padding: 20px;
+}
+
+/* Ocultar/Mostrar Vistas */
+.view-container {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+    width: 100%;
+    max-width: 500px;
+}
+
+.view-container.active {
+    display: flex; /* Mostrar si tiene la clase active */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- VISTA 1: BOTÓN INICIAL --- */
+.texto-instruccion h3 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.texto-instruccion p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+/* El Botón Gigante Central */
+.boton-sos-central {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #17a19c, #138581); /* Tu color Teal */
+    color: white;
+    font-size: 4rem;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(23, 161, 156, 0.4),
+                inset 0 5px 10px rgba(255,255,255,0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Efecto de "Onda" o Pulso alrededor del botón */
+.boton-sos-central::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #17a19c;
+    opacity: 0;
+    z-index: -1;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.boton-sos-central:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #1abc9c, #16a085);
+    box-shadow: 0 15px 35px rgba(23, 161, 156, 0.6);
+}
+
+.boton-sos-central:active {
+    transform: scale(0.95);
+}
+
+/* --- VISTA 2: CARGANDO (ENVIANDO) --- */
+.loader-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+}
+
+.loader-ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 8px solid #e5e7eb;
+    border-top-color: #17a19c; /* Color de carga */
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 5px;
+}
+
+.loader-center span {
+    width: 8px;
+    height: 8px;
+    background-color: #17a19c;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loader-center span:nth-child(1) { animation-delay: -0.32s; }
+.loader-center span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+.texto-envio h3 {
+    font-size: 1.8rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.texto-envio p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.timer-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #17a19c;
+    margin-bottom: 2rem;
+}
+
+.btn-cancelar {
+    background-color: transparent;
+    border: 2px solid #ef4444; /* Rojo para cancelar */
+    color: #ef4444;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-cancelar:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* --- VISTA 3: ÉXITO --- */
+.success-ring-outer {
+    width: 120px;
+    height: 120px;
+    background-color: #d1fae5; /* Verde claro fondo */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.success-circle-inner {
+    width: 80px;
+    height: 80px;
+    background-color: #10b981; /* Verde fuerte */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.icon-check-white {
+    color: white;
+    font-size: 3rem !important;
+}
+
+/* --- VISTA 4: CANCELADO --- */
+.cancelled-ring-outer {
+    width: 120px;
+    height: 120px;
+    background-color: #fee2e2; /* Rojo claro fondo */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.cancelled-circle-inner {
+    width: 80px;
+    height: 80px;
+    background-color: #ef4444; /* Rojo fuerte */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+}
+/* =========================================
+   ESTILOS DE NOTIFICACIÓN INTERACTIVA
+   ========================================= */
+
+.btn-notificacion {
+    position: relative; /* Para posicionar el punto rojo */
+    transition: all 0.3s ease;
+}
+
+/* Estado de ALERTA (Clase que pondremos con JS) */
+.btn-notificacion.alerta {
+    color: #ef4444; /* Rojo intenso */
+    background-color: #fee2e2;
+    border-radius: 50%;
+    animation: campana-agitada 1s infinite ease-in-out; /* Animación continua */
+}
+
+/* El punto rojo (Badge) */
+.btn-notificacion.alerta::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #dc2626;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Animación de agitación (Ding Dong) */
+@keyframes campana-agitada {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}

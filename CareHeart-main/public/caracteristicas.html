@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Características - CareHeart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <link rel="stylesheet" href="assets/styles/pie.css">
+</head>
+<body>
+  
+  <nav class="Top-hearder">
+      <a href="../index.html" class="logo"><img src="assets/images/logo careheart.png" alt="Logo"></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      
+      <div class="nav-menu" id="nav-menu">
+         <ul class="Menu-horizontal">
+            <li><a href="../index.html" style="font-weight: 900;">← Inicio</a></li>
+
+            <li>
+              <a href="caracteristicas.html">Características ▾</a>
+              <ul class="Menu-vertical">
+                <li><a href="caracteristicas.html#monitoreo">Monitoreo en tiempo real</a></li>
+                <li><a href="caracteristicas.html#alertas">Alertas y geolocalización</a></li>
+                <li><a href="caracteristicas.html#recordatorios">Recordatorios</a></li>
+                <li><a href="caracteristicas.html#informes">Informes de salud</a></li>
+              </ul>
+            </li>
+            <li><a href="planes.html">Planes</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+         </ul>
+
+         <div class="botones-login">
+            <a href="inicio-de-sesion.html" class="btn-ingresar">Ingresar</a>
+            <a href="registrarse.html" class="btn-registrarse">Registrarse</a>
+         </div>
+      </div>
+  </nav>
+
+  <header class="header-interno">
+    <h1>Características</h1>
+    <p>Tecnología avanzada diseñada para brindar tranquilidad y seguridad en todo momento.</p>
+  </header>
+
+  <main class="contenedor-interno">
+    <div id="monitoreo" class="seccion-detalle">
+      <h2>Monitoreo en tiempo real</h2>
+      <p>Nuestra pulsera inteligente registra signos vitales las 24 horas del día. Podrás visualizar el ritmo cardíaco, la presión arterial y la oxigenación desde la aplicación móvil.</p>
+    </div>
+    <div id="alertas" class="seccion-detalle">
+      <h2>Alertas y geolocalización</h2>
+      <p>En caso de emergencia o caída, el sistema envía una notificación inmediata a los familiares registrados con la ubicación exacta GPS.</p>
+    </div>
+    <div id="recordatorios" class="seccion-detalle">
+      <h2>Recordatorios de medicación</h2>
+      <p>Configura alarmas personalizadas que harán vibrar la pulsera y enviarán una notificación sonora para asegurar el tratamiento médico.</p>
+    </div>
+    <div id="informes" class="seccion-detalle">
+      <h2>Informes de salud</h2>
+      <p>Accede a reportes detallados semanales y mensuales sobre la evolución de la salud, descargables en PDF para el médico.</p>
+    </div>
+  </main>
+
+  <section class="seccion-pie">
+    <footer class="footer-container">
+      <a href="../index.html" class="logo"><img height="80" width="80" src="assets/images/logo careheart.png" alt="Logo Footer" /></a>
+      <div class="footer-links"><h4>Legal</h4><a href="#">Política de Privacidad</a><a href="#">Términos</a></div>
+      <div class="footer-social"><h4>Síguenos</h4><a href="#">Facebook</a><a href="#">Instagram</a></div>
+    </footer>
+  </section> 
+  
+  <script>
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+  </script>
+</body>
+
+</html>

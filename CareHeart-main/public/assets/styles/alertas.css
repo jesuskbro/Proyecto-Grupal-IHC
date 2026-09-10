@@ -1,0 +1,278 @@
+/* =========================================
+   ESTILOS ESPECÍFICOS - PANTALLA DE ALERTAS
+   (El menú y header se cargan desde dashboard.css)
+   ========================================= */
+
+/* Estructura del Grid de esta página */
+.grid-alertas {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Izquierda ancha, Derecha estrecha */
+  gap: 2rem;
+}
+
+/* --- BLOQUES DE ALERTAS (Izquierda) --- */
+.bloque-alertas {
+  margin-bottom: 1.5rem;
+}
+
+.cabecera-bloque-alertas h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Lista de Alertas Grandes (Críticas) */
+.lista-alertas-grandes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alerta-grande {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 10px;
+  background-color: #fcfcfc; /* Fondo muy suave */
+  border: 1px solid #f3f4f6;
+  transition: transform 0.2s;
+}
+
+.alerta-grande:hover {
+  transform: translateX(5px); /* Efecto sutil al pasar el mouse */
+  border-color: #e5e7eb;
+}
+
+.alerta-contenido h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.descripcion-alerta {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.alerta-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  min-width: 120px;
+}
+
+.alerta-fecha {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+/* Lista de Alertas Pequeñas (Historial) */
+.lista-alertas-pequenas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alerta-pequena {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.alerta-pequena:last-child {
+  border-bottom: none;
+}
+
+.alerta-pequena h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+/* --- BADGES (Etiquetas de estado) --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-critica { background-color: #fee2e2; color: #dc2626; }
+.badge-urgente { background-color: #ffedd5; color: #ea580c; }
+.badge-resuelta { background-color: #dcfce7; color: #16a34a; }
+.badge-confirmada { background-color: #e0f2fe; color: #0284c7; }
+
+/* Colores de títulos */
+.titulo-alerta.rojo { color: #dc2626; }
+.titulo-alerta.naranja { color: #ea580c; }
+.titulo-alerta.gris { color: #374151; }
+
+/* --- PANEL DE CONFIGURACIÓN (Derecha) --- */
+.columna-config-alertas {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-config-alertas h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.grupo-campos {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grupo-campos label {
+  font-size: 0.85rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.campo-doble {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.separador-campo {
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+/* Inputs bonitos */
+.panel-config-alertas input,
+.panel-config-alertas select {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box; /* Importante para que no se salga */
+  background-color: #fff;
+  transition: border-color 0.2s;
+}
+
+.panel-config-alertas input:focus,
+.panel-config-alertas select:focus {
+  border-color: #2e8b89; /* Tu color verde */
+  box-shadow: 0 0 0 3px rgba(46, 139, 137, 0.1);
+}
+
+/* Botones */
+.btn-link {
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #2e8b89;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.btn-primario {
+  background-color: #00908e; /* Verde oscuro del botón de la imagen */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.btn-primario:hover {
+  background-color: #047f7d;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .grid-alertas {
+    grid-template-columns: 1fr;
+  }
+}
+/* --- AGREGAR AL FINAL DE alertas.css --- */
+@media (max-width: 900px) {
+    .grid-alertas {
+        grid-template-columns: 1fr;
+    }
+
+    /* Alerta grande individual */
+    .alerta-grande {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .alerta-meta {
+        align-items: flex-start; /* Alinear a la izquierda en móvil */
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+}
+/* =========================================
+   ESTILOS DE NOTIFICACIÓN INTERACTIVA
+   ========================================= */
+
+.btn-notificacion {
+    position: relative; /* Para posicionar el punto rojo */
+    transition: all 0.3s ease;
+}
+
+/* Estado de ALERTA (Clase que pondremos con JS) */
+.btn-notificacion.alerta {
+    color: #ef4444; /* Rojo intenso */
+    background-color: #fee2e2;
+    border-radius: 50%;
+    animation: campana-agitada 1s infinite ease-in-out; /* Animación continua */
+}
+
+/* El punto rojo (Badge) */
+.btn-notificacion.alerta::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #dc2626;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Animación de agitación (Ding Dong) */
+@keyframes campana-agitada {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}

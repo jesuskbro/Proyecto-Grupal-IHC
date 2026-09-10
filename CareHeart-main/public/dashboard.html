@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careheart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        
+        <aside class="barra-lateral">
+            <div class="logo-container">
+            <img src="assets/images/logo careheart.png" alt="Logo CareHeart" class="logo-dashboard">
+            <h1>CareHeart</h1>
+            </div>
+
+            <nav class="menu-navegacion">
+                <a href="dashboard.html" class="enlace-menu activo">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+                 <a href="recordatorio.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">notifications</span>
+                    Recordatorios
+                </a>
+                
+                <a href="historial.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">history</span>
+                    Historial
+                </a>
+                <a href="alertas.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">warning</span>
+                    Alertas
+                </a>
+                <a href="perfil.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">person</span>
+                    Perfil
+                </a>
+                <a href="SOS.html" class="boton-sos">
+                    SOS
+                </a>
+            </nav>
+
+            <div class="menu-inferior">
+                <a href="configuracion.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">settings</span>
+                    Configuración
+                </a>
+                <a href="inicio-de-sesion.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">logout</span>
+                    Cerrar Sesión
+                </a>
+            </div>
+        </aside>
+
+        <div class="panel-derecho">
+            
+            <header class="encabezado">
+                <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="titulo-seccion">
+                    <h2>Dashboard</h2>
+                    <p>Resumen del estado de salud del paciente.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <button class="btn-notificacion">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <div class="info-doctor" onclick="window.location.href='perfil-doctor.html'" style="cursor: pointer;">
+                        <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar">
+                        <div>
+                            <p class="nombre-doc">Dr. Martínez</p>
+                            <p class="rol-doc">Cardiólogo</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="contenido-scroll">
+                
+                        <section class="grid-signos">
+                            <div class="tarjeta tarjeta-signo tarjeta-interactiva" onclick="window.location.href='Ritmo cardiaco.html'">
+                                <div class="tarjeta-header">
+                                    <h3>Frecuencia Cardíaca</h3>
+                                    <span class="material-symbols-outlined color-rojo">favorite</span>
+                                </div>
+                                <p class="dato-grande">72 <span>bpm</span></p>
+                                <div class="barra-progreso">
+                                    <div class="progreso p-60"></div>
+                                </div>
+                            </div>
+
+                            <div class="tarjeta tarjeta-signo tarjeta-interactiva" onclick="window.location.href='presion.html'">
+                                <div class="tarjeta-header">
+                                    <h3>Presión Arterial</h3>
+                                    <span class="material-symbols-outlined color-azul">blood_pressure</span>
+                                </div>
+                                <p class="dato-grande">120/80 <span>mmHg</span></p>
+                                <div class="barra-progreso">
+                                    <div class="progreso p-75"></div>
+                                </div>
+                            </div>
+
+                            <div class="tarjeta tarjeta-signo tarjeta-interactiva" onclick="window.location.href='oxigeno.html'">
+                                <div class="tarjeta-header">
+                                    <h3>Oxígeno en Sangre</h3>
+                                    <span class="material-symbols-outlined color-celeste">air</span>
+                                </div>
+                                <p class="dato-grande texto-azul">98%</p>
+                                <div class="barra-progreso">
+                                    <div class="progreso p-98"></div>
+                                </div>
+                            </div>
+                        </section>
+
+                <div class="grid-doble">
+                    <div class="columna-izquierda">
+                        <section class="tarjeta estado-pulsera">
+                            <h3>Estado de la Pulsera</h3>
+                            <div class="info-pulsera">
+                                <div class="icono-grande">
+                                    <span class="material-symbols-outlined">watch</span>
+                                </div>
+                                <div class="detalle-pulsera">
+                                    <p class="nombre-dispositivo">Pulsera Inteligente</p>
+                                    <p class="estado-conectado"><span class="material-symbols-outlined chico">check_circle</span> Conectado</p>
+                                </div>
+                                <div class="bateria">
+                                    <p>Batería</p>
+                                    <p class="porcentaje-bateria">87%</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tarjeta accesos-rapidos">
+                            <h3>Accesos Rápidos</h3>
+                            <div class="botones-rapidos">
+                                <a href="recordatorio.html" class="btn-cuadrado">
+                                    <span class="material-symbols-outlined">pill</span>
+                                    Medicación
+                                </a>
+                                <a href="historial.html" class="btn-cuadrado">
+                                    <span class="material-symbols-outlined">history</span>
+                                    Historial
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="columna-derecha">
+                        <section class="tarjeta lista-alertas">
+                            <h3>Alertas Recientes</h3>
+                            
+                            <div class="item-alerta">
+                                <div class="icono-alerta fondo-rojo"><span class="material-symbols-outlined">favorite</span></div>
+                                <div>
+                                    <p class="titulo-alerta rojo">Frecuencia cardíaca baja</p>
+                                    <p class="desc-alerta">Se detectó 45 bpm.</p>
+                                    <p class="hora-alerta">Hace 15 minutos</p>
+                                </div>
+                            </div>
+
+                            <div class="item-alerta">
+                                <div class="icono-alerta fondo-amarillo"><span class="material-symbols-outlined">pill</span></div>
+                                <div>
+                                    <p class="titulo-alerta amarillo">Recordatorio</p>
+                                    <p class="desc-alerta">Tomar Losartán (50mg).</p>
+                                    <p class="hora-alerta">Hace 1 hora</p>
+                                </div>
+                            </div>
+
+                            <div class="item-alerta">
+                                <div class="icono-alerta fondo-verde"><span class="material-symbols-outlined">check_circle</span></div>
+                                <div>
+                                    <p class="titulo-alerta verde">Signos estables</p>
+                                    <p class="desc-alerta">Mediciones normales.</p>
+                                    <p class="hora-alerta">Ayer 9:00 PM</p>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+<script src="assets/scripts/menu-responsive.js"></script>
+<script src="assets/scripts/notificaciones.js"></script>
+</body>
+</html>

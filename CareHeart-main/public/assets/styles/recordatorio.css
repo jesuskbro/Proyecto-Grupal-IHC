@@ -1,0 +1,298 @@
+/* Layout Principal de Grid */
+.layout-recordatorios {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr; /* Izquierda más ancha que derecha */
+    gap: 1.5rem;
+}
+
+.columna-izq {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Títulos con icono verde */
+.titulo-verde {
+    color: #009688; /* Tono teal */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* --- TARJETA FORMULARIO --- */
+.tabs-switch {
+    display: flex;
+    background-color: #f3f4f6;
+    padding: 4px;
+    border-radius: 999px; /* Pill shape */
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    /* Para que ocupe ancho de imagen, ajustamos: */
+    width: 100%; 
+    max-width: 400px;
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.activo {
+    background-color: #17a19c; /* Tu color principal */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Inputs del Formulario */
+.form-recordatorio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-recordatorio label {
+    display: block;
+    font-size: 0.8rem;
+    color: #4b5563;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.form-recordatorio input {
+    width: 100%;
+    padding: 12px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: inherit;
+    box-sizing: border-box; /* Importante para padding */
+}
+
+.fila-doble {
+    display: flex;
+    gap: 1rem;
+}
+.fila-doble .campo {
+    flex: 1;
+}
+
+.btn-agregar {
+    background-color: #00897b; /* Verde oscuro del botón */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+.btn-agregar:hover {
+    background-color: #00796b;
+}
+
+/* --- TARJETA LISTA (DERECHA) --- */
+.lista-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item-recordatorio {
+    display: flex;
+    align-items: center;
+    background-color: #f9fafb; /* Fondo gris claro */
+    padding: 1rem;
+    border-radius: 12px;
+    gap: 1rem;
+    border: 1px solid #f3f4f6;
+}
+
+.icono-tipo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+.icono-tipo span { font-size: 20px; }
+
+.naranja { background-color: #ff9800; }
+.azul { background-color: #03a9f4; }
+.amarillo { background-color: #ffc107; }
+
+.info-rec {
+    flex: 1;
+}
+.info-rec h4 { margin: 0; font-size: 0.95rem; color: #111827; }
+.info-rec p { margin: 4px 0 0; font-size: 0.75rem; color: #6b7280; }
+
+.tiempo-rec {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+.hora { font-weight: 700; font-size: 0.9rem; color: #111827; }
+.restante { font-size: 0.7rem; color: #9ca3af; }
+
+/* --- TARJETA RECOMENDACIONES (ABAJO IZQUIERDA) --- */
+.grid-reco {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.reco-item {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.reco-item span {
+    font-size: 32px;
+}
+
+.reco-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111827;
+}
+
+/* Colores específicos de las recomendaciones */
+.item-agua {
+    background-color: #e0f7fa; /* Celeste claro */
+}
+.item-agua span { color: #000; } 
+
+.item-caminar {
+    background-color: #e0f2f1; /* Verde menta claro */
+}
+
+.item-dormir {
+    background-color: #e0f7fa; /* Mismo celeste o similar */
+}
+.item-dormir span {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 24px; /* Ajuste visual icono luna */
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .layout-recordatorios {
+        grid-template-columns: 1fr;
+    }
+    .grid-reco {
+        grid-template-columns: 1fr; /* Una debajo de otra en móvil */
+    }
+}
+/* Utilidad para ocultar formularios */
+.hidden {
+    display: none;
+}
+
+/* Estilo para el Textarea de Cita Médica */
+.form-recordatorio textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: inherit;
+    resize: none; /* Evita que el usuario cambie el tamaño */
+    box-sizing: border-box;
+}
+
+/* Corrección de colores de botones activos (para que coincida con tu imagen) */
+.tab-btn.activo {
+    background-color: #17a19c; 
+    color: white;
+}
+/* Estilo del botón de cita cuando está activo (opcional, mismo color) */
+.tab-btn.activo {
+    background-color: #009688; /* Un verde similar al de la imagen */
+}
+
+/* --- AGREGAR AL FINAL DE recordatorio.css --- */
+@media (max-width: 900px) {
+    .layout-recordatorios {
+        grid-template-columns: 1fr;
+    }
+
+    /* Botones de pestaña (Medicamento/Cita) */
+    .tabs-switch {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Entradas de hora y dosis */
+    .fila-doble {
+        flex-direction: row; /* Mantener en fila si caben */
+        gap: 10px;
+    }
+    
+    /* Recomendaciones */
+    .grid-reco {
+        grid-template-columns: 1fr; /* Una debajo de otra */
+    }
+}
+/* =========================================
+   ESTILOS DE NOTIFICACIÓN INTERACTIVA
+   ========================================= */
+
+.btn-notificacion {
+    position: relative; /* Para posicionar el punto rojo */
+    transition: all 0.3s ease;
+}
+
+/* Estado de ALERTA (Clase que pondremos con JS) */
+.btn-notificacion.alerta {
+    color: #ef4444; /* Rojo intenso */
+    background-color: #fee2e2;
+    border-radius: 50%;
+    animation: campana-agitada 1s infinite ease-in-out; /* Animación continua */
+}
+
+/* El punto rojo (Badge) */
+.btn-notificacion.alerta::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #dc2626;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Animación de agitación (Ding Dong) */
+@keyframes campana-agitada {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}

@@ -1,0 +1,366 @@
+/* Layout Grid */
+.layout-config {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+}
+
+.columna-config {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tarjeta-config h3 {
+    margin-top: 0;
+    color: #111827;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtexto {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* --- ESTILOS DE SWITCH (INTERRUPTOR) --- */
+.lista-switches {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.item-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 1rem;
+}
+.item-switch:last-child { border-bottom: none; padding-bottom: 0; }
+
+.info-switch {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-switch { font-weight: 600; font-size: 0.95rem; color: #374151; }
+.desc-switch { font-size: 0.8rem; color: #9ca3af; margin-top: 2px; }
+
+/* El Switch en sí (CSS puro) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #17a19c; /* Tu color verde */
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* --- DISPOSITIVO --- */
+.info-dispositivo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.icono-reloj {
+    width: 50px; height: 50px;
+    background-color: #e0f2fe;
+    color: #0284c7;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.texto-disp { flex: 1; }
+.texto-disp h4 { margin: 0; font-size: 1rem; color: #111827; }
+.estado-ok { margin: 4px 0 0; color: #16a34a; font-size: 0.85rem; font-weight: 600; }
+.serial { margin: 2px 0 0; color: #9ca3af; font-size: 0.75rem; }
+
+.btn-desvincular {
+    background: none; border: 1px solid #ef4444; color: #ef4444;
+    padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; cursor: pointer;
+    transition: 0.2s;
+}
+.btn-desvincular:hover { background-color: #fee2e2; }
+
+/* --- FORMULARIO CUENTA --- */
+.form-cuenta .campo { margin-bottom: 1rem; }
+.form-cuenta label { display: block; font-size: 0.85rem; color: #4b5563; margin-bottom: 5px; font-weight: 600; }
+.form-cuenta input {
+    width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 8px;
+    font-family: inherit; box-sizing: border-box;
+}
+
+.btn-guardar {
+    width: 100%; padding: 12px; background-color: #17a19c; color: white;
+    border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+    transition: 0.2s; margin-top: 10px;
+}
+.btn-guardar:hover { background-color: #138581; }
+
+/* --- SOPORTE --- */
+.tarjeta-soporte {
+    background: linear-gradient(135deg, #17a19c 0%, #0f5f5c 100%);
+    color: white; text-align: center;
+}
+.tarjeta-soporte h3 { color: white; }
+.tarjeta-soporte p { color: #e0f2f1; font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+.btn-soporte {
+    background-color: white; color: #17a19c; border: none;
+    padding: 10px 20px; border-radius: 50px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .layout-config { grid-template-columns: 1fr; }
+}/* --- AGREGADOS PARA LÓGICA DE DISPOSITIVO --- */
+
+/* Botón para vincular (Verde/Teal) */
+.btn-vincular {
+    background-color: #17a19c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.btn-vincular:hover {
+    background-color: #138581;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(23, 161, 156, 0.2);
+}
+
+/* Estado de carga / búsqueda */
+.estado-buscando {
+    color: #f59e0b; /* Ambar */
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Animación de rotación para el icono de carga */
+.rotando {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilo cuando no hay dispositivo */
+.texto-gris {
+    color: #9ca3af;
+}
+.icono-gris {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+}
+/* --- ESTILOS DEL MODAL (VENTANA EMERGENTE) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Cuando quitamos la clase 'hidden', se muestra */
+.modal-overlay:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.modal-overlay:not(.hidden) .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal-header h3 { margin: 0; color: #111827; font-size: 1.2rem; }
+
+.btn-cerrar-modal {
+    background: none; border: none; cursor: pointer; color: #9ca3af;
+    padding: 5px; border-radius: 50%; transition: 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+.btn-cerrar-modal:hover { background-color: #f3f4f6; color: #111827; }
+
+.modal-desc { color: #6b7280; margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+/* Opciones de Contacto */
+.grid-opciones-soporte {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.opcion-soporte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.opcion-soporte:hover { background-color: #f9fafb; transform: translateY(-3px); }
+
+.icono-opcion {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.verde { background-color: #10b981; }
+.azul { background-color: #3b82f6; }
+.naranja { background-color: #f59e0b; }
+
+/* Animación Chat */
+.chat-status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f0fdf4;
+    color: #166534;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+
+.loader-dots {
+    width: 8px; height: 8px;
+    background-color: #166534;
+    border-radius: 50%;
+    animation: pulse 1s infinite alternate;
+}
+@keyframes pulse { from { opacity: 0.4; transform: scale(0.8); } to { opacity: 1; transform: scale(1.2); } }
+/* --- AGREGAR AL FINAL DE configuracion.css --- */
+@media (max-width: 900px) {
+    .layout-config {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tarjeta del dispositivo vinculado */
+    .info-dispositivo {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .btn-desvincular, .btn-vincular {
+        width: 100%; /* Botón ancho completo */
+        padding: 10px;
+    }
+}
+
+/* =========================================
+   ESTILOS DE NOTIFICACIÓN INTERACTIVA
+   ========================================= */
+
+.btn-notificacion {
+    position: relative; /* Para posicionar el punto rojo */
+    transition: all 0.3s ease;
+}
+
+/* Estado de ALERTA (Clase que pondremos con JS) */
+.btn-notificacion.alerta {
+    color: #ef4444; /* Rojo intenso */
+    background-color: #fee2e2;
+    border-radius: 50%;
+    animation: campana-agitada 1s infinite ease-in-out; /* Animación continua */
+}
+
+/* El punto rojo (Badge) */
+.btn-notificacion.alerta::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #dc2626;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Animación de agitación (Ding Dong) */
+@keyframes campana-agitada {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}
