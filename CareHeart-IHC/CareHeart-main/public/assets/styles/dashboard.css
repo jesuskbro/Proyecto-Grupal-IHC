@@ -1,0 +1,578 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Fuente moderna */
+    background-color: #f6f7f8; /* Fondo gris muy clarito */
+    color: #111827;
+}
+
+/* --- ESTRUCTURA PRINCIPAL (LAYOUT) --- */
+.contenedor-principal {
+    display: flex; /* Pone el menú al lado del contenido */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    overflow: hidden; /* Evita scroll doble */
+}
+
+/* --- BARRA LATERAL (IZQUIERDA) --- */
+.barra-lateral {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column; /* Elementos uno debajo del otro */
+    padding: 1.5rem;
+}
+
+/* --- ESTILO PARA EL LOGO IMAGEN --- */
+.logo-dashboard {
+    height: 70px; /* Ajusta este valor si lo quieres más grande o chico */
+    width: auto;  /* Mantiene la proporción para que no se estire */
+    object-fit: contain;
+}
+
+/* Ajuste opcional para el contenedor si el texto queda muy pegado */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Un poco más de espacio entre logo y texto */
+    margin-bottom: 2rem;
+    color: #2089df; /* Color azul principal */
+}
+
+.logo-container h1 {
+    font-size: 1.25rem;
+    color: #111827;
+    margin: 0;
+}
+
+.icono-logo {
+    font-size: 32px !important; /* Tamaño del icono del corazón */
+}
+
+.menu-navegacion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1; /* Empuja el menú inferior hacia abajo */
+}
+
+.enlace-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #4b5563;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+/* COLOR AL PASAR EL MOUSE (Hover) */
+.enlace-menu:hover {
+    background-color: #f0fafa; /* Un tono muy suavecito de verde/gris al pasar el mouse */
+}
+
+/* COLOR ACTIVO (EL CAMBIO QUE PEDISTE) */
+.enlace-menu.activo {
+    background-color: #DFEEEE; /* Tu color verdecito */
+    color: #1BA29E; /* Texto verde oscuro de tu marca */
+}
+
+.menu-inferior {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* --- PANEL DERECHO (CONTENIDO) --- */
+.panel-derecho {
+    flex: 1; /* Ocupa el resto del ancho */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado superior */
+.encabezado {
+    height: 80px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between; /* Separa título y perfil */
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.titulo-seccion h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.titulo-seccion p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.perfil-usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-notificacion {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.info-doctor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Hace la imagen redonda */
+}
+
+.nombre-doc {
+    font-weight: 600;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.rol-doc {
+    color: #6b7280;
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+/* Contenido con Scroll */
+.contenido-scroll {
+    flex: 1;
+    overflow-y: auto; /* Permite bajar si el contenido es largo */
+    padding: 2rem;
+}
+
+/* --- TARJETAS Y GRID --- */
+.tarjeta {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+
+/* Sección 1: Tres tarjetas arriba */
+.grid-signos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tarjeta-signo h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.dato-grande {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.dato-grande span {
+    font-size: 1rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 99px;
+}
+
+.progreso {
+    height: 100%;
+    border-radius: 99px;
+}
+
+/* Colores específicos */
+.color-rojo { color: #ef4444; }
+.color-azul { color: #3b82f6; }
+.color-celeste { color: #0ea5e9; }
+.texto-azul { color: #2089df; }
+
+.p-60 { width: 60%; background-color: #22c55e; }
+.p-75 { width: 75%; background-color: #22c55e; }
+.p-98 { width: 98%; background-color: #2089df; }
+
+/* Sección Inferior: Doble columna */
+.grid-doble {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Izquierda doble de ancho que derecha */
+    gap: 2rem;
+}
+
+/* Estado Pulsera */
+.info-pulsera {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.icono-grande {
+    width: 56px;
+    height: 56px;
+    background-color: #e0f2fe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2089df;
+}
+
+.detalle-pulsera {
+    flex-grow: 1;
+}
+
+.nombre-dispositivo {
+    font-weight: 600;
+    margin: 0;
+}
+
+.estado-conectado {
+    color: #22c55e;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+}
+
+.porcentaje-bateria {
+    font-weight: 600;
+    color: #22c55e;
+    margin: 0;
+}
+
+/* Accesos Rápidos */
+.botones-rapidos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-cuadrado {
+    background-color: #DFEEEE; /* Cambiado a tu color */
+    color: #1BA29E;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-cuadrado:hover {
+    background-color: #ccecec; /* Un poco más oscuro al pasar el mouse */
+}
+
+/* Alertas */
+.item-alerta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 1rem;
+}
+
+.item-alerta:last-child {
+    border-bottom: none;
+}
+
+.icono-alerta {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondo-rojo { background-color: #fee2e2; color: #ef4444; }
+.fondo-amarillo { background-color: #fef9c3; color: #eab308; }
+.fondo-verde { background-color: #dcfce7; color: #22c55e; }
+
+.titulo-alerta { font-weight: 600; margin: 0; font-size: 0.95rem; }
+.desc-alerta { color: #6b7280; margin: 4px 0; font-size: 0.875rem; }
+.hora-alerta { color: #9ca3af; font-size: 0.75rem; margin: 0; }
+
+.rojo { color: #dc2626; }
+.amarillo { color: #ca8a04; }
+.verde { color: #16a34a; }
+
+/* Responsive básico para móvil */
+@media (max-width: 768px) {
+    .contenedor-principal { flex-direction: column; height: auto; }
+    .barra-lateral { width: 100%; border-right: none; border-bottom: 1px solid #e5e7eb; }
+    .grid-signos { grid-template-columns: 1fr; }
+    .grid-doble { grid-template-columns: 1fr; }
+}
+
+/* --- ESTILO DEL BOTÓN SOS --- */
+.boton-sos {
+    display: block;
+    text-align: center;
+    background-color: #d0f2f0;
+    color: #2e8b89;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 15px 0;
+    border-radius: 12px;
+    margin-top: 30px;
+    letter-spacing: 4px;
+    font-family: 'Inter', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.boton-sos:hover {
+    transform: scale(1.05);
+    background-color: #bbf7f4;
+    box-shadow: 0 4px 15px rgba(46, 139, 137, 0.2);
+    border-color: #2e8b89;
+    cursor: pointer;
+}
+
+.tarjeta-interactiva {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación suave */
+    border: 1px solid transparent; /* Para evitar saltos si agregamos borde */
+}
+
+/* El movimiento al pasar el mouse */
+.tarjeta-interactiva:hover {
+    transform: translateY(-8px); /* Se mueve hacia arriba */
+    box-shadow: 0 15px 30px rgba(32, 137, 223, 0.15); /* Sombra azulada elegante */
+    border-color: #2089df; /* Borde azul suave para resaltar */
+}
+
+/* Efecto al hacer clic (presionar) */
+.tarjeta-interactiva:active {
+    transform: translateY(-2px); /* Se hunde un poco */
+    box-shadow: 0 5px 10px rgba(32, 137, 223, 0.1);
+}
+
+.tarjeta-signo {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-signo:hover {
+    transform: translateY(-5px); /* Se mueve hacia arriba */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.tarjeta-signo:active {
+    transform: scale(0.98); /* Se achica un poquito al hacer clic */
+}
+/* =========================================
+   DISEÑO RESPONSIVE (MÓVIL) - ESTILO "CAREHEART COMPACT"
+   ========================================= */
+
+/* Botón Menú */
+.btn-menu-mobile {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111827;
+    padding: 0;
+    margin-right: 10px;
+}
+.btn-menu-mobile span { font-size: 28px; }
+
+/* Overlay */
+.overlay-sidebar {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.overlay-sidebar.active { display: block; opacity: 1; }
+
+/* --- AJUSTES MÓVILES --- */
+@media (max-width: 900px) {
+    
+    /* 1. ESTRUCTURA PRINCIPAL */
+    .contenedor-principal {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* Barra lateral (Menú) */
+    .barra-lateral {
+        position: fixed;
+        top: 0; left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 999;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        border-right: none;
+    }
+    .barra-lateral.active { left: 0; }
+    .btn-menu-mobile { display: block; }
+
+    .panel-derecho { width: 100%; }
+
+    /* 2. ENCABEZADO */
+    .encabezado {
+        height: 60px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        gap: 10px;
+    }
+
+    .titulo-seccion { display: flex; align-items: center; flex: 1; min-width: 0; }
+    .titulo-seccion h2 { font-size: 1.2rem; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .titulo-seccion p { display: none; } 
+
+    .perfil-usuario { display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
+    
+    /* Ocultamos texto del doctor, dejamos solo avatar */
+    .info-doctor { display: flex; align-items: center; }
+    .info-doctor div { display: none; }
+    .avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; display: block; }
+
+    /* 3. CONTENIDO */
+    .contenido-scroll { padding: 1rem; }
+
+    /* --- AQUÍ ESTÁ LA MAGIA DEL DISEÑO QUE PEDISTE --- */
+
+    /* A) SIGNOS VITALES: 2 Columnas arriba, 1 abajo */
+    .grid-signos {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important; /* Dos columnas iguales */
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* La tercera tarjeta (Oxígeno) ocupa todo el ancho */
+    .grid-signos > div:nth-child(3) {
+        grid-column: span 2; 
+    }
+
+    /* Ajuste interno de las tarjetas de signos para que se vean compactas */
+    .tarjeta-signo {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .tarjeta-header { margin-bottom: 5px; }
+    .tarjeta-header h3 { font-size: 0.85rem; } /* Título más pequeño */
+    .dato-grande { font-size: 1.8rem; margin: 5px 0; } /* Número más ajustado */
+
+    /* B) COLUMNAS GENERALES (Apiladas) */
+    .grid-doble {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .columna-izquierda, .columna-derecha { width: 100%; }
+
+    /* C) BOTONES DE ACCIÓN (RECORDATORIOS / HISTORIAL) */
+    /* Los ponemos lado a lado como en tu imagen */
+    .botones-rapidos {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important; /* Lado a lado */
+        gap: 1rem;
+    }
+
+    /* Estilo de los botones para que se parezcan a la imagen */
+    .btn-cuadrado {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* D) OTRAS PÁGINAS (Que sigan en 1 columna para no romperse) */
+    .layout-detalle, .layout-doctor, .layout-config, 
+    .layout-recordatorios, .grid-contenido, .grid-alertas {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        display: grid;
+    }
+
+    .tarjeta { padding: 1rem; }
+}
+/* =========================================
+   ESTILOS DE NOTIFICACIÓN INTERACTIVA
+   ========================================= */
+
+.btn-notificacion {
+    position: relative; /* Para posicionar el punto rojo */
+    transition: all 0.3s ease;
+}
+
+/* Estado de ALERTA (Clase que pondremos con JS) */
+.btn-notificacion.alerta {
+    color: #ef4444; /* Rojo intenso */
+    background-color: #fee2e2;
+    border-radius: 50%;
+    animation: campana-agitada 1s infinite ease-in-out; /* Animación continua */
+}
+
+/* El punto rojo (Badge) */
+.btn-notificacion.alerta::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #dc2626;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Animación de agitación (Ding Dong) */
+@keyframes campana-agitada {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}

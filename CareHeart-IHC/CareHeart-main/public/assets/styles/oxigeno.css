@@ -1,0 +1,181 @@
+/* Layout Específico de 2 Columnas (2/3 y 1/3) */
+.layout-detalle {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 1.5rem;
+}
+
+/* --- TARJETA DATO SUPERIOR --- */
+.tarjeta-dato-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.icono-circular {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.icono-circular.cyan { background-color: #e0f7fa; color: #00bcd4; }
+.icono-circular .material-symbols-outlined { font-size: 32px; }
+
+.info-dato { flex: 1; }
+.info-dato h3 { margin: 0; color: #6b7280; font-size: 0.9rem; font-weight: 600; }
+.valor-gigante { margin: 5px 0 0; font-size: 2.5rem; font-weight: 800; color: #111827; }
+.fecha-dato { font-size: 0.8rem; color: #9ca3af; }
+
+.estado-pill {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.estado-pill.cyan { background-color: #b2ebf2; color: #006064; }
+
+/* --- GRÁFICO PRINCIPAL --- */
+.tarjeta-grafico-main { padding: 2rem; min-height: 400px; }
+
+.header-grafico {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.header-grafico h3 { margin: 0; font-size: 1rem; color: #111827; }
+.sub-grafico { margin: 0; font-size: 0.85rem; color: #6b7280; }
+.valor-promedio { font-size: 2.5rem; font-weight: 700; margin: 10px 0 0; }
+
+.filtros { display: flex; gap: 5px; background: #f3f4f6; padding: 4px; border-radius: 8px; }
+.filtros button {
+    border: none; background: none; padding: 6px 12px;
+    font-size: 0.85rem; border-radius: 6px; cursor: pointer; color: #6b7280;
+}
+.filtros button.activo { background: white; color: #111827; box-shadow: 0 1px 2px rgba(0,0,0,0.1); font-weight: 600; }
+
+.area-grafico-svg { height: 250px; width: 100%; position: relative; }
+.area-grafico-svg svg { width: 100%; height: 100%; overflow: visible; }
+
+/* Estilos de línea SVG (Cyan) */
+.linea-borde-cyan { fill: none; stroke: #00bcd4; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.linea-relleno-cyan { fill: rgba(0, 188, 212, 0.1); stroke: none; }
+.punto-rojo { fill: #ef4444; stroke: white; stroke-width: 2; }
+
+.eje-x { display: flex; justify-content: space-between; margin-top: 1rem; color: #9ca3af; font-size: 0.9rem; }
+
+/* --- COLUMNA LATERAL --- */
+.tarjeta-lateral { padding: 1.5rem; margin-bottom: 1.5rem; }
+.tarjeta-lateral h3 { margin: 0 0 1rem; font-size: 1rem; color: #111827; }
+
+.rango-box {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #f0fdf4; padding: 10px; border-radius: 8px; margin-bottom: 1rem;
+}
+.rango-valor { font-weight: 700; font-size: 1.1rem; color: #111827; }
+.badge-optimo { color: #16a34a; font-size: 0.8rem; display: flex; align-items: center; gap: 4px; font-weight: 600; }
+.texto-lateral { font-size: 0.85rem; color: #6b7280; line-height: 1.5; }
+
+.alerta-item { display: flex; justify-content: space-between; align-items: center; }
+.titulo-alerta { margin: 0; font-size: 0.9rem; font-weight: 600; color: #374151; }
+.fecha-alerta { margin: 4px 0 0; font-size: 0.75rem; color: #ef4444; }
+.icon-danger { color: #ef4444; }
+
+@media (max-width: 1024px) {
+    .layout-detalle { grid-template-columns: 1fr; }
+}
+/* =========================================
+   RESPONSIVE (MÓVIL) - OXÍGENO
+   ========================================= */
+@media (max-width: 900px) {
+    
+    /* 1. Layout Principal */
+    .layout-detalle {
+        grid-template-columns: 1fr;
+    }
+
+    /* 2. Tarjeta Dato Superior */
+    .tarjeta-dato-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    /* Mover el estado (pill) abajo del todo o al lado del título */
+    .tarjeta-dato-top .estado-pill {
+        align-self: flex-start;
+        margin-top: 5px;
+    }
+
+    .valor-gigante {
+        font-size: 3.5rem; /* Número más grande en móvil */
+        margin: 10px 0;
+    }
+
+    /* 3. Gráfico y Filtros */
+    .header-grafico {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filtros {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .filtros button {
+        flex: 1;
+    }
+
+    /* 4. Sidebar (Rango y Alertas) */
+    .columna-info-lateral {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+/* =========================================
+   ESTILOS DE NOTIFICACIÓN INTERACTIVA
+   ========================================= */
+
+.btn-notificacion {
+    position: relative; /* Para posicionar el punto rojo */
+    transition: all 0.3s ease;
+}
+
+/* Estado de ALERTA (Clase que pondremos con JS) */
+.btn-notificacion.alerta {
+    color: #ef4444; /* Rojo intenso */
+    background-color: #fee2e2;
+    border-radius: 50%;
+    animation: campana-agitada 1s infinite ease-in-out; /* Animación continua */
+}
+
+/* El punto rojo (Badge) */
+.btn-notificacion.alerta::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #dc2626;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Animación de agitación (Ding Dong) */
+@keyframes campana-agitada {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}

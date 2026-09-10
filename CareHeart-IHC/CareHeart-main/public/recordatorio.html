@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorios - CareHeart</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/recordatorio.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        
+        <aside class="barra-lateral">
+            <div class="logo-container">
+              <img src="assets/images/logo careheart.png" alt="Logo CareHeart" class="logo-dashboard">
+              <h1>CareHeart</h1>
+            </div>
+    
+            <nav class="menu-navegacion">
+              <a href="dashboard.html" class="enlace-menu">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+              </a>
+              <a href="recordatorio.html" class="enlace-menu activo">
+                <span class="material-symbols-outlined">notifications</span>
+                Recordatorios
+              </a>
+              <a href="historial.html" class="enlace-menu">
+                <span class="material-symbols-outlined">history</span>
+                Historial
+              </a>
+              <a href="alertas.html" class="enlace-menu">
+                <span class="material-symbols-outlined">warning</span>
+                Alertas
+              </a>
+              <a href="perfil.html" class="enlace-menu">
+                <span class="material-symbols-outlined">person</span>
+                Perfil
+              </a>
+              <a href="SOS.html" class="boton-sos">SOS</a>
+            </nav>
+    
+            <div class="menu-inferior">
+              <a href="configuracion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">settings</span>
+                Configuración
+              </a>
+              <a href="inicio-de-sesion.html" class="enlace-menu">
+                <span class="material-symbols-outlined">logout</span>
+                Cerrar Sesión
+              </a>
+            </div>
+        </aside>
+
+        <div class="panel-derecho">
+            <header class="encabezado">
+              <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="titulo-seccion">
+                    <h2>Recordatorio</h2>
+                </div>
+                <div class="perfil-usuario">
+                    <button class="btn-notificacion"><span class="material-symbols-outlined">notifications</span></button>
+                    <div class="info-doctor" onclick="window.location.href='perfil-doctor.html'" style="cursor: pointer;">
+                        <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar">
+                        <div>
+                            <p class="nombre-doc">Dr. Martínez</p>
+                            <p class="rol-doc">Cardiólogo</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="contenido-scroll">
+                <div class="layout-recordatorios">
+                    
+                    <div class="columna-izq">
+                        
+                        <div class="tarjeta tarjeta-form">
+                            <h3 class="titulo-verde">
+                                <span class="material-symbols-outlined">add_circle</span> 
+                                Agregar Nuevo Recordatorio
+                            </h3>
+
+                            <div class="tabs-switch">
+                                <button type="button" class="tab-btn activo" id="btn-tab-med">Medicamento</button>
+                                <button type="button" class="tab-btn" id="btn-tab-cita">Cita médica</button>
+                            </div>
+
+                            <form class="form-recordatorio">
+                                <div id="campos-medicamento">
+                                    <div class="campo-full">
+                                        <label>Nombre del medicamento</label>
+                                        <input type="text" id="input-med-nombre" placeholder="Ej. Aspirina">
+                                    </div>
+
+                                    <div class="fila-doble">
+                                        <div class="campo">
+                                            <label>Hora</label>
+                                            <input type="time" id="input-med-hora">
+                                        </div>
+                                        <div class="campo">
+                                            <label>Dosis (mg/ml)</label>
+                                            <input type="text" id="input-med-dosis" placeholder="Ej. 100mg">
+                                        </div>
+                                    </div>
+
+                                    <div class="campo-full">
+                                        <label>Frecuencia</label>
+                                        <input type="text" id="input-med-freq" placeholder="Cada 24 horas">
+                                    </div>
+                                </div>
+
+                                <div id="campos-cita" class="hidden">
+                                    <div class="campo-full">
+                                        <label>Médico</label>
+                                        <input type="text" id="input-cita-medico" placeholder="Ej. Dr. Martínez">
+                                    </div>
+
+                                    <div class="fila-doble">
+                                        <div class="campo">
+                                            <label>Fecha</label>
+                                            <input type="date" id="input-cita-fecha">
+                                        </div>
+                                        <div class="campo">
+                                            <label>Hora</label>
+                                            <input type="time" id="input-cita-hora">
+                                        </div>
+                                    </div>
+
+                                    <div class="campo-full">
+                                        <label>Notas</label>
+                                        <textarea id="input-cita-notas" rows="3" placeholder="Ej. Llevar análisis de sangre..."></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn-agregar" id="btn-submit">Agregar</button>
+                            </form>
+                        </div>
+
+                        <div class="tarjeta tarjeta-recomendaciones">
+                            <h3 class="titulo-verde">Recomendaciones</h3>
+                            <div class="grid-reco">
+                                <div class="reco-item item-agua">
+                                    <span class="material-symbols-outlined">water_drop</span>
+                                    <p>Toma 8 vasos de agua hoy</p>
+                                </div>
+                                <div class="reco-item item-caminar">
+                                    <span class="material-symbols-outlined">directions_walk</span>
+                                    <p>Recuerda caminar 20 minutos</p>
+                                </div>
+                                <div class="reco-item item-dormir">
+                                    <span class="material-symbols-outlined">dark_mode</span>
+                                    <p>No olvides tus medicamentos nocturnos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columna-der">
+                        <div class="tarjeta tarjeta-lista">
+                            <h3 class="titulo-verde">
+                                <span class="material-symbols-outlined">notifications_active</span>
+                                Próximos Recordatorios
+                            </h3>
+
+                            <div class="lista-items" id="lista-recordatorios">
+                                
+                                <div class="item-recordatorio">
+                                    <div class="icono-tipo naranja">
+                                        <span class="material-symbols-outlined">pill</span>
+                                    </div>
+                                    <div class="info-rec">
+                                        <h4>Aspirina</h4>
+                                        <p>100mg, cada 24 horas</p>
+                                    </div>
+                                    <div class="tiempo-rec">
+                                        <span class="hora">08:00 AM</span>
+                                        <span class="restante">En 30 minutos</span>
+                                    </div>
+                                </div>
+
+                                <div class="item-recordatorio">
+                                    <div class="icono-tipo azul">
+                                        <span class="material-symbols-outlined">calendar_month</span>
+                                    </div>
+                                    <div class="info-rec">
+                                        <h4>Cita con Cardiólogo</h4>
+                                        <p>Dr. Martínez, Hospital Central</p>
+                                    </div>
+                                    <div class="tiempo-rec">
+                                        <span class="hora">11:30 AM</span>
+                                        <span class="restante">En 4 horas</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="assets/scripts/recordatorio.js"></script>
+    <script src="assets/scripts/menu-responsive.js"></script>
+<script src="assets/scripts/notificaciones.js"></script>
+
+</body>
+</html>

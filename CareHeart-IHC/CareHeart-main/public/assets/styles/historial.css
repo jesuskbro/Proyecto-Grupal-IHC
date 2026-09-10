@@ -1,0 +1,277 @@
+/* Layout General */
+.contenedor-historial {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- BARRA DE HERRAMIENTAS --- */
+.toolbar-historial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filtros-tipo {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chip-filtro {
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.chip-filtro:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.chip-filtro.activo {
+    background-color: #17a19c; /* Tu color principal */
+    color: white;
+    border-color: #17a19c;
+}
+
+.acciones-derecha {
+    display: flex;
+    gap: 1rem;
+}
+
+.selector-fecha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-exportar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #374151; /* Gris oscuro para diferenciar */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-exportar:hover {
+    background-color: #1f2937;
+}
+
+/* --- LISTA DE EVENTOS --- */
+.lista-eventos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.separador-fecha {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.evento-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid #f3f4f6;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.evento-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Estilo especial para alertas */
+.evento-card.alerta {
+    background-color: #fffbfb;
+    border-left: 4px solid #ef4444;
+}
+
+/* Íconos circulares */
+.icono-evento {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.azul-claro { background-color: #e0f2fe; color: #0284c7; } /* Corazón */
+.naranja-claro { background-color: #ffedd5; color: #ea580c; } /* Pastilla */
+.rojo-claro { background-color: #fee2e2; color: #dc2626; } /* Alerta */
+.celeste-claro { background-color: #e0f7fa; color: #00bcd4; } /* Oxígeno */
+
+.info-evento {
+    flex: 1;
+}
+
+.info-evento h4 {
+    margin: 0 0 4px 0;
+    color: #111827;
+    font-size: 1rem;
+}
+
+.info-evento p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.valor-evento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 2rem;
+    min-width: 100px;
+}
+
+.dato {
+    font-weight: 700;
+    color: #111827;
+    font-size: 1.1rem;
+}
+.dato.rojo { color: #dc2626; }
+
+/* Badges (Etiquetas) */
+.badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.normal { background-color: #dcfce7; color: #166534; }
+.critico { background-color: #fee2e2; color: #991b1b; }
+.completado { background-color: #e0f2fe; color: #075985; }
+
+.hora-evento {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    font-weight: 500;
+    min-width: 70px;
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .evento-card {
+        flex-wrap: wrap;
+    }
+    .valor-evento {
+        align-items: flex-start;
+        margin-right: 0;
+        margin-top: 10px;
+        width: 100%;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+    .hora-evento {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+    }
+    .evento-card {
+        position: relative;
+    }
+    
+}
+/* --- AGREGAR AL FINAL DE historial.css --- */
+@media (max-width: 900px) {
+    .toolbar-historial {
+        flex-direction: column;
+        align-items: stretch; /* Estirar a lo ancho */
+        gap: 1rem;
+    }
+
+    .filtros-tipo {
+        overflow-x: auto; /* Permitir deslizar si son muchos */
+        padding-bottom: 5px;
+        justify-content: flex-start;
+    }
+
+    .acciones-derecha {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .selector-fecha, .btn-exportar {
+        width: 100%; /* Botones grandes y fáciles de tocar */
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
+/* =========================================
+   ESTILOS DE NOTIFICACIÓN INTERACTIVA
+   ========================================= */
+
+.btn-notificacion {
+    position: relative; /* Para posicionar el punto rojo */
+    transition: all 0.3s ease;
+}
+
+/* Estado de ALERTA (Clase que pondremos con JS) */
+.btn-notificacion.alerta {
+    color: #ef4444; /* Rojo intenso */
+    background-color: #fee2e2;
+    border-radius: 50%;
+    animation: campana-agitada 1s infinite ease-in-out; /* Animación continua */
+}
+
+/* El punto rojo (Badge) */
+.btn-notificacion.alerta::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #dc2626;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Animación de agitación (Ding Dong) */
+@keyframes campana-agitada {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}

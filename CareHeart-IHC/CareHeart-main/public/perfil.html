@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Paciente - CareHeart</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/perfil.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        
+        <aside class="barra-lateral">
+            <div class="logo-container">
+                <img src="assets/images/logo careheart.png" alt="Logo" class="logo-dashboard">
+                <h1>CareHeart</h1>
+            </div>
+
+            <nav class="menu-navegacion">
+                <a href="dashboard.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+                <a href="recordatorio.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">notifications</span>
+                    Recordatorios
+                </a>
+                <a href="historial.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">history</span>
+                    Historial
+                </a>
+                <a href="alertas.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">warning</span>
+                    Alertas
+                </a>
+                <a href="perfil.html" class="enlace-menu activo">
+                    <span class="material-symbols-outlined">person</span>
+                    Perfil
+                </a>
+                <a href="SOS.html" class="boton-sos">SOS</a>
+            </nav>
+
+            <div class="menu-inferior">
+                <a href="configuracion.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">settings</span>
+                    Configuración
+                </a>
+                <a href="inicio-de-sesion.html" class="enlace-menu">
+                    <span class="material-symbols-outlined">logout</span>
+                    Cerrar Sesión
+                </a>
+            </div>
+        </aside>
+
+        <main class="panel-derecho">
+            
+            <header class="encabezado">
+                <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="titulo-seccion">
+                    <h2>Perfil del Paciente</h2>
+                    <p>Gestión de información personal.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <button class="btn-notificacion">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <div class="info-doctor" onclick="window.location.href='perfil-doctor.html'" style="cursor: pointer;">
+                        <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar">
+                        <div>
+                            <p class="nombre-doc">Dr. Martínez</p>
+                            <p class="rol-doc">Cardiólogo</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="contenido-scroll">
+                <div class="grid-contenido">
+                    
+                    <div class="columna">
+                        <div class="tarjeta tarjeta-paciente">
+                            <div class="contenido-paciente">
+                                <img src="assets/images/abuela.jpg" alt="Paciente" class="foto-paciente">
+                                <div class="datos-paciente">
+                                    <h3>Carmen Vilchez</h3>
+                                    <p>Edad: 78 • DNI: 72891072</p>
+                                    <button class="btn-editar" id="btn-editar-perfil">
+                                        <span class="material-symbols-outlined">edit</span> 
+                                        <span id="texto-btn-editar">Editar</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta tarjeta-info">
+                            <div class="titulo-icono">
+                                <span class="material-symbols-outlined">person</span>
+                                <h3>Datos Personales</h3>
+                            </div>
+                            <div class="lista-info" id="lista-datos-personales">
+                                <div class="fila">
+                                    <span class="label">Dirección</span>
+                                    <span class="valor dato-editable" id="perfil-direccion">Calle de la Rosa 12</span>
+                                </div>
+                                <div class="fila">
+                                    <span class="label">Teléfono</span>
+                                    <span class="valor dato-editable" id="perfil-telefono">910 102 012</span>
+                                </div>
+                                <div class="fila">
+                                    <span class="label">Nacimiento</span>
+                                    <span class="valor dato-editable" id="perfil-nacimiento">15 Ene, 1945</span>
+                                </div>
+                                <div class="fila">
+                                    <span class="label">Email</span>
+                                    <span class="valor dato-editable" id="perfil-email">carmen@mail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columna">
+                        <div class="tarjeta tarjeta-medica">
+                            <div class="titulo-icono">
+                                <span class="material-symbols-outlined">monitor_heart</span>
+                                <h3>Ficha Médica</h3>
+                            </div>
+                            
+                            <div class="lista-medica">
+                                <div class="item-medico">
+                                    <span class="label-medico">Diagnóstico</span>
+                                    <span class="valor-medico">Diabetes T2, Hipertensión</span>
+                                </div>
+                                <div class="item-medico">
+                                    <span class="label-medico">Alergias</span>
+                                    <span class="valor-medico" style="color: #ef4444;">Penicilina</span>
+                                </div>
+                            </div>
+
+                            <h4 class="subtitulo-medico"><span class="material-symbols-outlined icon-small">sticky_note_2</span> Notas del Médico</h4>
+                            <p class="texto-nota">
+                                Controlar presión arterial 2 veces al día. Mantener dieta baja en sodio.
+                            </p>
+
+                            <h4 class="subtitulo-medico"><span class="material-symbols-outlined icon-small">pill</span> Tratamiento Actual</h4>
+                            <table class="tabla-medicina">
+                                <thead>
+                                    <tr>
+                                        <th>Medicamento</th>
+                                        <th>Dosis</th>
+                                        <th>Frec.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lisinopril</td>
+                                        <td>10mg</td>
+                                        <td>24h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Metformina</td>
+                                        <td>500mg</td>
+                                        <td>12h</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="columna">
+                        <div class="tarjeta tarjeta-contactos">
+                            <div class="header-contactos">
+                                <h3>Contactos</h3>
+                                <button class="btn-anadir" id="btn-anadir-contacto">+ Añadir</button>
+                            </div>
+                            
+                            <div class="lista-contactos" id="contenedor-contactos">
+                                <div class="item-contacto">
+                                    <div class="avatar-contacto">CG</div>
+                                    <div class="info-c">
+                                        <h4>Carlos García</h4>
+                                        <p>Hijo • 982 912 012</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/scripts/perfil.js"></script>
+    <script src="assets/scripts/menu-responsive.js"></script>
+<script src="assets/scripts/notificaciones.js"></script>
+    
+</body>
+</html>

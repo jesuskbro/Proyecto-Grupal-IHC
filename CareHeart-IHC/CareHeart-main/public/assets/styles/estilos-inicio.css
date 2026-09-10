@@ -1,0 +1,471 @@
+/* =========================================
+   RESET Y ESTILOS GENERALES
+   ========================================= */
+/* ESTO ES VITAL: Hace que el padding no aumente el ancho de los elementos */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+/* Contenedor Principal */
+.login-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================================
+   LADO IZQUIERDO: IMAGEN
+   ========================================= */
+.login-image {
+  flex: 1.5; /* 60% de ancho */
+  background-image: url('../images/AncianosVarios_2daMitad.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* CLASE ESPECÍFICA PARA EL REGISTRO */
+.registro-bg {
+  background-image: url('../images/AncianosVarios_1eraMitad.jpg');
+}
+
+.overlay {
+  background: linear-gradient(to top, rgba(46, 139, 137, 0.9), transparent);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.text-overlay {
+  padding: 5rem;
+  color: white;
+  max-width: 700px;
+}
+
+.text-overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.text-overlay p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* =========================================
+   LADO DERECHO: FORMULARIO
+   ========================================= */
+.login-form-wrapper {
+  flex: 1; /* 40% ancho */
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: -10px 0 25px rgba(0,0,0,0.05);
+  z-index: 2;
+  overflow-y: auto; /* Permite scroll vertical si es necesario */
+  padding: 2rem;
+}
+
+.btn-volver {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  text-decoration: none;
+  color: #888;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
+}
+
+.btn-volver:hover {
+  color: #2e8b89;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* --- LOGO HEADER (Modificado para Mobile más abajo) --- */
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.logo-header img {
+  width: 120px; /* Tamaño ajustado */
+  height: auto;
+}
+
+.logo-header h1 {
+  font-size: 3rem;
+  color: #333;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.color-brand {
+  color: #2e8b89;
+}
+
+.form-box h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+  text-align: left;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* INPUTS (Con corrección de ancho) */
+.input-group {
+  margin-bottom: 1.2rem;
+  width: 100%; /* Asegura que ocupe el contenedor */
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  width: 100%; /* Ocupa el 100% del padre */
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: inherit;
+  /* box-sizing: border-box; YA ESTÁ EN EL GLOBAL, PERO POR SEGURIDAD */
+}
+
+.input-group input:focus {
+  border-color: #2e8b89;
+  background-color: white;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(46, 139, 137, 0.1);
+}
+
+/* Acciones */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+  flex-wrap: wrap; /* Permite que bajen si no caben */
+  gap: 10px;
+}
+
+.forgot-pass {
+  color: #2e8b89;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-pass:hover {
+  text-decoration: underline;
+}
+
+/* Botón Principal */
+.btn-login {
+  width: 100%;
+  padding: 16px;
+  background-color: #2e8b89;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 5px 15px rgba(46, 139, 137, 0.3);
+}
+
+.btn-login:hover {
+  background-color: #1a5c5a;
+  transform: translateY(-2px);
+}
+
+/* Links inferiores */
+.register-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.register-link a {
+  color: #2e8b89;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVIL) - CORRECCIONES
+   ========================================= */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .login-image {
+    display: none;
+  }
+
+  .login-form-wrapper {
+    width: 100%;
+    /* Ajuste de padding para que los inputs no toquen los bordes */
+    padding: 3rem 1.5rem; 
+    box-shadow: none;
+    overflow-y: visible;
+  }
+
+  .form-box {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  /* --- LOGO EN MÓVIL: APILADO --- */
+  .logo-header {
+    flex-direction: column; /* Pone el logo arriba y texto abajo */
+    gap: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .logo-header img {
+    width: 100px; /* Un poco más pequeño para móvil */
+  }
+
+  .logo-header h1 {
+    font-size: 2.5rem; /* Texto ajustado */
+  }
+
+  /* Centramos título y subtítulo en móvil también */
+  .form-box h3, 
+  .subtitle {
+    text-align: center;
+  }
+}
+/* =========================================
+   ESTILOS AUTENTICACIÓN 2 PASOS (MODAL)
+   ========================================= */
+
+/* Fondo oscuro */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 2000;
+    opacity: 0; 
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Estado activo para mostrar */
+.modal-overlay.active { 
+    opacity: 1; 
+    pointer-events: auto; 
+}
+
+/* Utilidad para ocultar */
+.hidden { 
+    display: none !important; 
+}
+
+/* Caja del modal (CORREGIDO: .box-2fa en lugar de .2fa-box) */
+.modal-content.box-2fa {
+    background: white;
+    width: 90%; 
+    max-width: 380px;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Icono logo superior */
+.icon-circle {
+    width: 70px; 
+    height: 70px;
+    background-color: #e0f2f1;
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+
+.icon-circle img {
+    width: 40px; 
+    height: auto;
+}
+
+.modal-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: #111827;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.subtitle-modal {
+    color: #6b7280; 
+    font-size: 0.9rem; 
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Visualización de correo */
+.input-display {
+    background: #f3f4f6;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    word-break: break-all; /* Evita que correos largos rompan el diseño */
+}
+
+/* Botones de método */
+.label-small { 
+    text-align: left; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    margin-bottom: 5px; 
+    color: #333; 
+}
+
+.btn-metodo {
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+    padding: 12px;
+    background: white;
+    border: 2px solid #111827;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    color: #111827;
+    transition: 0.2s;
+}
+.btn-metodo:hover { background: #f9fafb; }
+
+/* Links de texto */
+.acciones-extra { display: flex; flex-direction: column; gap: 10px; }
+
+.btn-texto {
+    background: none; 
+    border: 1px solid #e5e7eb;
+    padding: 10px; 
+    border-radius: 8px;
+    font-weight: 700; 
+    cursor: pointer; 
+    color: #111827;
+    width: 100%;
+}
+.btn-texto.gris { border: none; color: #9ca3af; }
+
+/* --- PASO 2: INPUT CÓDIGO --- */
+.input-code-wrapper { margin-bottom: 1.5rem; }
+
+.input-code-wrapper input {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    font-weight: 700;
+}
+.input-code-wrapper input:focus { border-color: #17a19c; }
+
+.acciones-codigo { display: flex; flex-direction: column; gap: 10px; }
+
+.btn-solid {
+    background-color: #111827; /* Negro/Gris oscuro según imagen */
+    color: white; 
+    border: none; 
+    padding: 12px; 
+    border-radius: 8px;
+    font-weight: 700; 
+    cursor: pointer; 
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-outline {
+    background: white; 
+    border: 1px solid #e5e7eb; 
+    color: #111827;
+    padding: 12px; 
+    border-radius: 8px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* --- PASO 3: ÉXITO --- */
+.success-animation {
+    color: #17a19c;
+    margin-bottom: 1rem;
+}
+.icon-check { font-size: 80px; }
+.color-brand { color: #17a19c; }

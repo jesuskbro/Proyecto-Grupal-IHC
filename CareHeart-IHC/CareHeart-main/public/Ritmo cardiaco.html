@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle Ritmo Cardíaco | VitalCare</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- 1. Estilos Generales del Dashboard (Menú, Header) -->
+    <link rel="stylesheet" href="assets/styles/dashboard.css" />
+    <!-- 2. Estilos Específicos de esta página -->
+    <link rel="stylesheet" href="assets/styles/Ritmo cardiaco.css" />
+  </head>
+  <body>
+    <div class="contenedor-principal">
+      
+      <!-- BARRA LATERAL -->
+      <aside class="barra-lateral">
+        <div class="logo-container">
+          <img src="assets/images/logo careheart.png" alt="Logo CareHeart" class="logo-dashboard">
+          <h1>CareHeart</h1>
+        </div>
+
+        <nav class="menu-navegacion">
+          <!-- El Dashboard sigue activo porque esta es una sub-página del dashboard -->
+          <a href="dashboard.html" class="enlace-menu activo">
+            <span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+          </a>
+          <a href="recordatorio.html" class="enlace-menu">
+            <span class="material-symbols-outlined">notifications</span>
+            Recordatorios
+          </a>
+          <a href="historial.html" class="enlace-menu">
+            <span class="material-symbols-outlined">history</span>
+            Historial
+          </a>
+          <a href="alertas.html" class="enlace-menu">
+            <span class="material-symbols-outlined">warning</span>
+            Alertas
+          </a>
+          <a href="perfil.html" class="enlace-menu">
+            <span class="material-symbols-outlined">person</span>
+            Perfil
+          </a>
+
+          <a href="SOS.html" class="boton-sos">SOS</a>
+        </nav>
+
+        <div class="menu-inferior">
+          <a href="configuracion.html" class="enlace-menu">
+            <span class="material-symbols-outlined">settings</span>
+            Configuración
+          </a>
+          <a href="inicio-de-sesion.html" class="enlace-menu">
+            <span class="material-symbols-outlined">logout</span>
+            Cerrar Sesión
+          </a>
+        </div>
+      </aside>
+
+      <!-- PANEL DERECHO -->
+      <div class="panel-derecho">
+        <header class="encabezado">
+          <button id="btn-menu-mobile" class="btn-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+          <div class="titulo-seccion">
+            <!-- Botón para volver atrás -->
+            <div style="display:flex; align-items:center; gap:10px;">
+                <a href="dashboard.html" style="text-decoration:none; color:#666;">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <div>
+                    <h2>Frecuencia Cardíaca</h2>
+                    <p>Detalle histórico y análisis en tiempo real.</p>
+                </div>
+            </div>
+          </div>
+
+          <div class="perfil-usuario">
+            <button class="btn-notificacion">
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <div class="info-doctor">
+              <img src="assets/images/doctor.jpg" alt="Doctor" class="avatar" />
+              <div>
+                <p class="nombre-doc">Dr. Martínez</p>
+                <p class="rol-doc">Cardiólogo</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="contenido-scroll">
+          <section class="layout-dashboard">
+            <!-- COLUMNA CENTRAL -->
+            <div class="columna-central">
+              <!-- BLOQUE RITMO -->
+              <section class="tarjeta tarjeta-ritmo">
+                <div class="ritmo-izquierda">
+                  <div class="icono-ritmo">
+                    <span class="material-symbols-outlined">favorite</span>
+                  </div>
+                  <div>
+                    <p class="titulo-ritmo">Ritmo cardiaco actual</p>
+                    <p class="valor-ritmo">85 <span>BPM</span></p>
+                  </div>
+                </div>
+
+                <div class="ritmo-derecha">
+                  <div class="estado-pill">
+                    <span class="estado-label">Estado:</span>
+                    <span class="estado-valor">Normal</span>
+                  </div>
+                  <p class="texto-actualizacion">
+                    Última actualización: 14:32 PM
+                  </p>
+                </div>
+              </section>
+
+              <!-- GRÁFICO -->
+              <section class="tarjeta tarjeta-grafico">
+                <div class="header-grafico">
+                  <div>
+                    <h3>Historial de Frecuencia Cardíaca</h3>
+                    <p class="subtitulo-grafico">Últimos 7 días</p>
+                  </div>
+
+                  <div class="filtros-grafico">
+                    <button class="btn-filtro">Hoy</button>
+                    <button class="btn-filtro activo">7 días</button>
+                    <button class="btn-filtro">Mes</button>
+                    <button class="btn-filtro">Año</button>
+                  </div>
+                </div>
+
+                <div class="contenedor-grafico">
+                  <div class="eje-derecho">
+                    <span>100</span>
+                    <span>60</span>
+                  </div>
+
+                  <div class="grafico-linea">
+                    <!-- SVG Simple simulando un gráfico -->
+                    <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                      <!-- líneas guía -->
+                      <line x1="0" y1="12" x2="100" y2="12" class="linea-guia" />
+                      <line x1="0" y1="26" x2="100" y2="26" class="linea-guia" />
+
+                      <!-- línea de ritmo -->
+                      <polyline
+                        class="linea-ritmo"
+                        points="0,30 10,18 20,22 30,16 40,20 50,25 60,34 70,10 80,32 90,18 100,24"
+                      />
+
+                      <!-- puntos -->
+                      <circle cx="70" cy="10" r="1.4" class="punto-rojo" />
+                      <circle cx="60" cy="34" r="1.4" class="punto-turquesa" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="dias-grafico">
+                  <span>Lun</span>
+                  <span>Mar</span>
+                  <span>Mié</span>
+                  <span>Jue</span>
+                  <span>Vie</span>
+                  <span>Sáb</span>
+                  <span>Dom</span>
+                </div>
+              </section>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="columna-lateral">
+              <section class="tarjeta resumen-periodo">
+                <h3>Resumen del periodo</h3>
+
+                <div class="bloque-resumen">
+                  <p class="etiqueta-resumen">Promedio</p>
+                  <p class="valor-resumen">78 BPM</p>
+                </div>
+
+                <div class="bloque-resumen">
+                  <p class="etiqueta-resumen">Máximo</p>
+                  <p class="valor-resumen maximo">125 BPM</p>
+                </div>
+
+                <div class="bloque-resumen">
+                  <p class="etiqueta-resumen">Mínimo</p>
+                  <p class="valor-resumen minimo">45 BPM</p>
+                </div>
+              </section>
+
+              <section class="tarjeta eventos-relevantes">
+                <h3>Eventos Relevantes</h3>
+
+                <div class="item-evento">
+                  <div class="icono-evento rojo">
+                    <span class="material-symbols-outlined">warning</span>
+                  </div>
+                  <div>
+                    <p class="titulo-evento">Alerta: Taquicardia</p>
+                    <p class="hora-evento">Jue, 10:15 – 125BPM</p>
+                  </div>
+                </div>
+
+                <div class="item-evento">
+                  <div class="icono-evento amarillo">
+                    <span class="material-symbols-outlined">medication</span>
+                  </div>
+                  <div>
+                    <p class="titulo-evento">Medicación “Nastizol” tomada</p>
+                    <p class="hora-evento">Jue, 08:00</p>
+                  </div>
+                </div>
+
+                <div class="item-evento">
+                  <div class="icono-evento verde">
+                    <span class="material-symbols-outlined">directions_run</span>
+                  </div>
+                  <div>
+                    <p class="titulo-evento">Actividad física registrada</p>
+                    <p class="hora-evento">Mié, 17:40 – Caminata ligera</p>
+                  </div>
+                </div>
+
+                <div class="item-evento">
+                  <div class="icono-evento naranja">
+                    <span class="material-symbols-outlined">favorite</span>
+                  </div>
+                  <div>
+                    <p class="titulo-evento">Frecuencia baja detectada</p>
+                    <p class="hora-evento">Mar, 23:45 – 58BPM</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="assets/scripts/menu-responsive.js"></script>
+    <script src="assets/scripts/graficos.js"></script>
+<script src="assets/scripts/notificaciones.js"></script>
+
+  </body>
+</html>
